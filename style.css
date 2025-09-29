@@ -66,3 +66,24 @@ body {
     width: 100%;
     height: auto;
 }
+.ind_skelbimas{
+    width: 50%;
+    margin: auto;
+    align-self: auto;
+
+}
+
+.ind_skelbimas img{
+    width: 100%;
+    height: auto;
+    margin: 10px;
+}
+.detalus_aprasas{
+    text-align: center;
+    font-size: 15px;
+    color: black;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: auto;
+    margin-top: 10px;
+}
