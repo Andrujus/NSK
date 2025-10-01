@@ -12,15 +12,17 @@ body {
     font-size: 20px;
     color: darkblue;
     width: 25%;
-    height: 25%;
+    height: 250px;
     border: 2px solid black;
     margin-left: 20px;
     margin-bottom: 10px;
     padding: 10px;
     background-color: lightgrey;
-    display: flex;
+    display: grid;
+    object-fit: cover;
     flex-direction: column;
-    justify-content: space-between;
+    min-width: 250px;
+    
 }
 .navi {background-color: lightgrey;
     padding: 10px;
@@ -59,21 +61,25 @@ body {
 .skelbimai:hover {
     background-color: rgb(185, 205, 211);
     transform: scale(1.1);
-    transition: 0.5s;
+    transition: 0.8s;
 }
 
 .skelbimai img{
     width: 100%;
     height: auto;
+    max-height: 200px;
+    border: 1px solid black;
 }
 .ind_skelbimas{
     width: 50%;
     margin: auto;
     align-self: auto;
+    margin-bottom: 30px;
 
 }
 
 .ind_skelbimas img{
+    border: 1px solid black;
     width: 100%;
     height: auto;
     margin: 10px;
@@ -86,4 +92,16 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: auto;
     margin-top: 10px;
+}
+
+.tel {
+    text-align: right;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: auto;
+    align-items: stretch;
 }
