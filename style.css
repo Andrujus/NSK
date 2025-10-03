@@ -1,0 +1,14 @@
+.container {
+    height: auto;
+    width: min-content;
+    background-color: lightgrey;
+    margin: auto;
+}
+
+#display {
+    width: min-content;
+}
+
+.btn {
+    width: 20%;
+}
