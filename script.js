@@ -1,6 +1,7 @@
 document.getElementById("7").addEventListener("click", function() {
     document.getElementById("display").value += "7";
-    a = 7;
+    var a = 7;
+    return a;
 });
 document.getElementById("8").addEventListener("click", function() {
     document.getElementById("display").value += "8";
@@ -25,15 +26,19 @@ document.getElementById("6").addEventListener("click", function() {
 });
 document.getElementById("1").addEventListener("click", function() {
     document.getElementById("display").value += "1";
+    a = 1;
 });
 document.getElementById("2").addEventListener("click", function() {
     document.getElementById("display").value += "2";
+    a = 2;
 });
 document.getElementById("3").addEventListener("click", function() {
     document.getElementById("display").value += "3";
+     a = 3;
 });
 document.getElementById("0").addEventListener("click", function() {
     document.getElementById("display").value += "0";
+    a = 0;
 });
 document.getElementById("/").addEventListener("click", function() {
     document.getElementById("display").value += "/";
@@ -45,7 +50,7 @@ document.getElementById("-").addEventListener("click", function() {
     document.getElementById("display").value += "-";
 });
 document.getElementById("+").addEventListener("click", function() {
-    document.getElementById("display").value += "+";
+    document.getElementById("display").value = "";
 });
 document.getElementById(".").addEventListener("click", function() {
     document.getElementById("display").value += ".";
@@ -53,8 +58,9 @@ document.getElementById(".").addEventListener("click", function() {
 document.getElementById("C").addEventListener("click", function() {
     document.getElementById("display").value = "";
 });
-document.getElementById("=").addEventListener("click", calculate);
 
-function sum() {
-        document.getElementById("display").value 
+document.getElementById("=").addEventListener("click", sum(a));
+
+function sum(a) {
+        document.getElementById("display").value = a + display.value;
 };
