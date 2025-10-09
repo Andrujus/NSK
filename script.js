@@ -42,15 +42,23 @@ document.getElementById("0").addEventListener("click", function() {
 });
 document.getElementById("/").addEventListener("click", function() {
     document.getElementById("display").value += "/";
+    op = "/";
+    return op;
 });
 document.getElementById("*").addEventListener("click", function() {
     document.getElementById("display").value += "*";
+    op = "*";
+    return op;
 });
 document.getElementById("-").addEventListener("click", function() {
     document.getElementById("display").value += "-";
+    op = "-";
+    return op;
 });
 document.getElementById("+").addEventListener("click", function() {
     document.getElementById("display").value = "";
+    op = "+";
+    return op;
 });
 document.getElementById(".").addEventListener("click", function() {
     document.getElementById("display").value += ".";
@@ -61,6 +69,5 @@ document.getElementById("C").addEventListener("click", function() {
 
 document.getElementById("=").addEventListener("click", sum(a));
 
-function sum(a) {
-        document.getElementById("display").value = a + display.value;
-};
+if (op == "+"):
+    
