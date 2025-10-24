@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
-const buttons = document.querySelectorAll(".btn");
+const buttons = document.querySelectorAll(".btn, .btn1, .btn2");
+
 
 let firstNumber = "";
 let operator = "";
@@ -10,7 +11,6 @@ buttons.forEach(button => {
     const value = button.id;
 
     if (!isNaN(value) || value === ".") {
-      // Skaičiai ir taškas
       if (operator === "") {
         firstNumber += value;
         display.value = firstNumber;
@@ -19,19 +19,51 @@ buttons.forEach(button => {
         display.value = secondNumber;
       }
     } 
-    else if (["+", "-", "*", "/"].includes(value)) {
-      // Operatorius
+
+    else if (["+", "-", "*", "/", "^"].includes(value)) {
       operator = value;
     } 
+
+    else if (value === "^2") {
+      if (firstNumber !== "") {
+        const num = parseFloat(firstNumber);
+        const result = num * num;
+        display.value = result;
+        firstNumber = result.toString();
+        secondNumber = "";
+        operator = "";
+      }
+    }
+
+    else if (value === "sqrt") {
+      if (firstNumber !== "") {
+        const num = parseFloat(firstNumber);
+        if (num < 0) {
+          display.value = "Klaida";
+        } else {
+          const result = Math.sqrt(num);
+          display.value = result;
+          firstNumber = result.toString();
+          secondNumber = "";
+          operator = "";
+        }
+      }
+    }
+
     else if (value === "equals") {
-      // Skaičiavimas
       const num1 = parseFloat(firstNumber);
       const num2 = parseFloat(secondNumber);
       let result;
 
-      if (operator === "+") result = num1 + num2;
-      else if (operator === "-") result = num1 - num2;
-      else if (operator === "*") result = num1 * num2;
+      if (operator === "+") {
+        result = num1 + num2;
+      } 
+      else if (operator === "-") {
+        result = num1 - num2;
+      } 
+      else if (operator === "*") {
+        result = num1 * num2;
+      } 
       else if (operator === "/") {
         if (num2 === 0) {
           result = "Klaida";
@@ -39,18 +71,21 @@ buttons.forEach(button => {
           result = num1 / num2;
         }
       }
+      else if (operator === "^") {
+        result = Math.pow(num1, num2);
+      }
 
       display.value = result;
       firstNumber = result.toString();
       secondNumber = "";
       operator = "";
     } 
+
     else if (value === "C") {
-      // Išvalyti
       firstNumber = "";
       secondNumber = "";
       operator = "";
-      display.value = "";
+      display.value = "0";
     }
   });
 });
