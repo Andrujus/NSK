@@ -1,4 +1,114 @@
-.container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f2f2f2;
+}
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 1rem;
+    background: #fff;
+}
+
+/* Header */
+h1 { margin: 0 0 .5rem; }
+.subtitle { margin: 0 0 1rem; font-size: .9rem; color: #555; }
+
+.status-bar {
+    border: 1px solid #ccc;
+    padding: .5rem;
+    font-size: .85rem;
+    margin-bottom: 1rem;
+}
+.progress {
+    height: 6px;
+    background: #ddd;
+}
+#progressBar {
+    height: 100%;
+    background: #007bff;
+    width: 0%;
+}
+
+/* Form */
+form { display: flex; flex-direction: column; gap: 1rem; }
+.form-section {
+    border: 1px solid #ccc;
+    padding: .75rem;
+}
+.form-section h2 {
+    font-size: 1rem;
+    margin: 0 0 .5rem;
+}
+
+/* Fields */
+.field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+.field-group label { font-size: .9rem; }
+.required { color: red; }
+
+.field-row {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+.field-row .field-group { flex: 1 1 200px; }
+
+input, select, textarea {
+    font: inherit;
+    padding: .35rem;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    width: 100%;
+}
+textarea { resize: vertical; }
+
+.inline-options {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    font-size: .9rem;
+}
+
+/* Nested blocks */
+.hidden { display: none; }
+.nested-section {
+    border: 1px dashed #ccc;
+    padding: .5rem;
+    background: #fafafa;
+    margin-top: .5rem;
+}
+
+.warning { color: red; font-size: .85rem; }
+
+/* Actions */
+.actions { display: flex; gap: .5rem; }
+button {
+    padding: .4rem .8rem;
+    border: 1px solid #aaa;
+    background: #eee;
+    cursor: pointer;
+}
+button.primary {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+/* Preview */
+.data-preview {
+    background: #111;
+    color: #eee;
+    padding: .5rem;
+    font-size: .75rem;
+    overflow-x: auto;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .field-row { flex-direction: column; }
 }
