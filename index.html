@@ -1,62 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="lt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NT skelbimai</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Memory Card Game</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-    <h1 id="pav">NT Objektų sarašas</h1>
-    <nav class="navi">
-        <a style=margin:10px href="index.html">Home</a>
-        <a style=margin:10px href="migrations/about.html">About</a>
-        <a style="margin: 10px" href="migrations/contact.html">Contact</a>
-    </nav>
-    <br>
-    
-    <div class="container">
-        <a class="skelbimai" href="migrations/sk1.html">
-        <img class="foto" src="src/pexels-binyaminmellish-1396122.jpg" alt="1. Namas balsiuose" width="200px" height="150px">
-        <p class="aprasas">Parduodu nama balsiuose 6 a sklypas</p>
-        <p class="price">Kaina: 250 000 Eur</p>
-    </a>
-    <a class="skelbimai" href="migrations/sk2.html">
-        <img class="foto" src="src\pexels-pixabay-221540.jpg" alt="2. Namas Naujojoje Vilnioje" width="200px" height="150px">
-        <p class="aprasas">Parduodu 3 kambariu nama Naujojoje Vilnioje</p>
-        <p class="price">Kaina: 120 000 Eur</p>
-    </a>
-    <a class="skelbimai" href="migrations/sk3.html">
-        <img class="foto" src="src\pexels-pixabay-259593.jpg" alt="3. Namas Tauragej" width="200px" height="150px">
-        <p class="aprasas">Parduodu nama Tauragėj</p>
-        <p class="price">Kaina: 85 000 Eur</p>
-    </a>
-    <a class="skelbimai" href="migrations/sk4.html">
-        <img class="foto" src="src\pexels-binyaminmellish-186077.jpg" alt="4. Namas Siauliuose" width="200px" height="150px">
-        <p class="aprasas">Parduodu nama Siauliuose</p>
-        <p class="price">Kaina: 95 000 Eur</p>
-    </a>
-    <a class="skelbimai" href="migrations/sk5.html">
-        <img class="foto" src="src/zukausgo_23.jpg" alt="1. Namas balsiuose" width="200px" height="150px">
-        <p class="aprasas">Parduodu buta S. Žukausko g. 23</p>
-        <p class="price">Kaina: 225 000 Eur</p>
-    </a>
-    <a class="skelbimai" href="migrations/sk6.html">
-        <img class="foto" src="src/zirmunai.jpg" alt="2. Namas Naujojoje Vilnioje" width="200px" height="150px">
-        <p class="aprasas">Parduodu 3k butą žirmūnuose</p>
-        <p class="price">Kaina: 120 000 Eur</p>
-    </a>
-    <a class="skelbimai" href="migrations/sk3.html">
-        <img class="foto" src="src/polocko.jpg" alt="3. Namas Tauragej" width="200px" height="150px">
-        <p class="aprasas">Parduodu butą prestižiniame užupyje, Polocko g.</p>
-        <p class="price">Kaina: 285 000 Eur</p>
-    </a>
-    <a class="skelbimai" href="migrations/sk4.html">
-        <img class="foto" src="src/kunigiskes.jpg" alt="4. Namas Siauliuose" width="200px" height="150px">
-        <p class="aprasas">Parduodu nama naujajame Kunigiškių rajone</p>
-        <p class="price">Kaina: 495 000 Eur</p>
-    </a>
-    </div>
-    
+  <main class="page">
+    <section class="shell">
+      <div class="card">
+        <!-- LEFT: BOARD -->
+        <div class="left">
+          <div class="boardWrap">
+            <div id="board" class="board" aria-live="polite"></div>
+          </div>
+
+          <div class="stats">
+            <div class="pill">⏱ <span>Laikas</span> <b id="time">0</b>s</div>
+            <div class="pill">🎯 <span>Bandymų</span> <b id="moves">0</b></div>
+            <div class="pill">✅ <span>Porų</span> <b id="pairsLeft">0</b></div>
+          </div>
+
+          <div class="msg" id="message">Pasirink sudėtingumą ir pradėk žaidimą.</div>
+        </div>
+
+        <!-- RIGHT: INFO / CONTROLS -->
+        <aside class="right">
+          <h1>Memory Card Game</h1>
+          <p class="sub">HTML CSS &amp; JavaScript</p>
+
+          <div class="controls">
+            <label class="field">
+              <span>Žaidėjas</span>
+              <input id="playerName" type="text" placeholder="Įvesk vardą" />
+            </label>
+
+            <label class="field">
+              <span>Sudėtingumas</span>
+              <select id="difficulty">
+                <option value="easy">Lengvas (10 porų)</option>
+                <option value="hard">Sunkus (15 porų)</option>
+              </select>
+            </label>
+
+            <div class="btnRow">
+              <button id="newGameBtn" class="btn primary">Naujas žaidimas</button>
+              <button id="resetScoresBtn" class="btn ghost" title="Ištrina rekordus sesijai">Išvalyti rekordus</button>
+            </div>
+          </div>
+
+          <div class="scoresBox">
+            <h2>Geriausi rezultatai (sesija)</h2>
+            <div id="scores" class="scores"></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script src="index.js"></script>
 </body>
 </html>
